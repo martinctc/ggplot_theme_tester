@@ -1,4 +1,4 @@
-# ggplot theme tester
+# 🎨 ggplot theme tester
 
 ## About
 

@@ -8,7 +8,7 @@ This project is for you if you are developing ggplot2 themes, or trying to figur
 
 ### Pre-requisites
 
-You don't need a lot ot get started:
+You don't need much to get started:
 
 - {tidyverse} (essential) 
 - {patchwork} (essential)
@@ -28,8 +28,6 @@ This process of loading the fonts can take around 5 minutes, but I assure you it
 ### Workflow Basics
 
 You can get started by cloning this repository, using GitHub Desktop or cloning it the traditional way using git. Open the `.Rproj` file in the main directory with RStudio, and open/save your scripts in the `scripts` folder (Don't use `setwd()`!).<sup>2</sup>
-
-
 
 1. Load {tidyverse} and {extrafont} to ensure all ggplot2 features and fonts are available in the design and testing process.
 

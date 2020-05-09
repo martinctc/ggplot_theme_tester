@@ -102,6 +102,21 @@ I am using this project for my personal use in developing themes. Please feel fr
 
 ![](/examples/example_executive2.png)
 
+Apart from themes, another feature that is being incorporated into this workflow is the ability to develop colour palettes. Currently, there is a `brands_pal.R` file that allows you to use the colours of some well-known brands:
+
+##### Microsoft: `scale_colour_brands(palette = "msft")`
+
+![](/examples/example_executive2_msft.png)
+
+##### Instagram: `scale_colour_brands(palette = "ig")`
+
+![](/examples/example_executive2_ig.png)
+
+##### Google: `scale_colour_brands(palette = "google")`
+
+![](/examples/example_executive2_google.png)
+
+
 #### Dark DBZ Theme (`theme_dbz()`)
 
 ![](/examples/example_dbz.png)

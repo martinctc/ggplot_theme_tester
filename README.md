@@ -16,11 +16,15 @@ install.packages("extrafont")
 extrafont::font_import()
 loadfonts(device = "win")
 ```
-This can take around 5 minutes. After the process is completed, you will just need to load the {extrafont} library with `library(extrafont)` to use the desired fonts in ggplot. 
+This process of loading the fonts can take around 5 minutes, but I assure you it is well worth it.[^0] After the process is completed, you will just need to load the {extrafont} library with `library(extrafont)` to use the desired fonts in ggplot.
+
+[^0]: For more information on the installation process, please see this Stack Overflow thread: https://stackoverflow.com/questions/34522732/changing-fonts-in-ggplot2
 
 ### Workflow Basics
 
-You can get started by cloning this repository, using GitHub Desktop or cloning it the traditional way using git.
+You can get started by cloning this repository, using GitHub Desktop or cloning it the traditional way using git. Open the `.Rproj` file in the main directory with RStudio, and open/save your scripts in the `scripts` folder (Don't use `setwd()`!).[^1]
+
+[^1]: See https://martinctc.github.io/blog/rstudio-projects-and-working-directories-a-beginner's-guide/.
 
 1. Load {tidyverse} and {extrafont} to ensure all ggplot2 features and fonts are available in the design and testing process.
 
@@ -29,3 +33,42 @@ You can get started by cloning this repository, using GitHub Desktop or cloning 
 3. Create your ggplot theme as a function, and save the R file under "themes". In the main script, use `source()` again to load in the theme you've created. 
 
 4. Run the test function to iterate through how your theme would look like with different base plot configurations. In this workflow, I use {patchwork} to combine the plots for easy viewing.
+
+### Example
+
+Here is an example using the `theme_dbz()` theme that I used on the plots from my blog post [Data cleaning with Kamehamehas in R](https://martinctc.github.io/blog/data-cleaning-with-kamehamehas-in-r/):
+
+```r
+library(tidyverse)
+library(patchwork)
+library(extrafont)
+
+#### Load base plots ####
+source("base_plots/base_plots.R")
+
+#### Design theme ####
+source("themes/theme_dbz.R")
+
+#### test themes ####
+test_themes <- function(plots,
+                        theme,
+                        theme_label){
+  plots +
+    theme +
+    labs(subtitle = theme_label)
+  
+}
+
+#### Run plots ####
+
+base_plots %>%
+  map(test_themes,
+      theme = theme_dbz(),
+      theme_label = "theme: theme_dbz()") %>%
+  reduce(`+`)
+
+```
+
+And here is the result:
+
+![](examples/example_dbz.png)

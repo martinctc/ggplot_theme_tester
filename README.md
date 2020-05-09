@@ -80,6 +80,16 @@ And here is the result:
 
 ---
 
+### Theme Gallery
+
+I am using this project for my personal use in developing themes. Please feel free to explore the themes that I am working on: 
+
+#### FT Theme (`theme_ft()`)
+
+![](examples/example_ft2.png)
+
+---
+
 <sup>1</sup>. For more information on the installation process, please see this Stack Overflow thread: https://stackoverflow.com/questions/34522732/changing-fonts-in-ggplot2
 
 <sup>2</sup> See https://martinctc.github.io/blog/rstudio-projects-and-working-directories-a-beginner's-guide/.

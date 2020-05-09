@@ -12,7 +12,8 @@ library(extrafont)
 # loadfonts(device = "win")
 
 #### Load base plots ####
-source("base_plots/base_plots.R")
+# source("base_plots/base_plots.R")
+source("base_plots/base_plots3.R")
 
 #### Design theme ####
 source("themes/theme_dbz.R")

@@ -38,8 +38,10 @@ point_plot_lm <-
 ## line plot with loess curve fitting
 point_plot_loess <-
   airquality %>%
-  ggplot(aes(Temp, Ozone)) + 
-  geom_point() + 
+  mutate(Month = month.abb[Month]) %>%
+  mutate(Month = factor(Month, levels = month.abb[5:9])) %>%
+  ggplot(aes(x = Temp, y = Ozone)) + 
+  geom_point(aes(colour = Month)) + 
   geom_smooth(method = "loess", se = FALSE) +
   labs(x = "Temperature",
        y = "Ozone",
@@ -48,11 +50,13 @@ point_plot_loess <-
 ## faceted scatterplot
 faceted_scatterplot <-
   cleaned_airquality %>%
-  select(-Month, -Day) %>%
-  gather(Metrics, Value, -Date) %>%
+  select(-Day) %>%
+  gather(Metrics, Value, -Date, -Month) %>%
   tidyr::drop_na() %>%
+  mutate(Month = month.abb[Month]) %>%
+  mutate(Month = factor(Month, levels = month.abb[5:9])) %>%
   ggplot(aes(Date, Value)) +
-  geom_point() + 
+  geom_point(aes(colour = Month)) + 
   facet_wrap(~Metrics) +
   labs(x = "Months in 1973",
        y = "Measurement Value",

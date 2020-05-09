@@ -1,8 +1,14 @@
 # ggplot theme tester
 
-This is a project to create a workflow for designing and testing custom ggplot themes in R. 
+## About
+
+The aim of this project is to **create a workflow for designing and testing custom ggplot themes in R.** 
 
 This project is for you if you are developing ggplot2 themes, or trying to figure out how a theme looks on a variety of plots (or a variety of themes on a plot). This project is built on the `purrr` workflow from this [blog post](https://martinctc.github.io/blog/vignette-generate-your-own-ggplot-theme-gallery/).
+
+Sample output from `theme_executive()`:
+
+![](/examples/example_executive.png)
 
 ---
 
@@ -86,7 +92,21 @@ I am using this project for my personal use in developing themes. Please feel fr
 
 #### FT Theme (`theme_ft()`)
 
+![](examples/example_ft.png)
+
 ![](examples/example_ft2.png)
+
+#### Executive Theme (`theme_executive()`)
+
+![](/examples/example_executive.png)
+
+![](/examples/example_executive2.png)
+
+#### Dark DBZ Theme (`theme_dbz()`)
+
+![](/examples/example_dbz.png)
+
+![](/examples/example_dbz2.png)
 
 ---
 

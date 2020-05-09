@@ -108,6 +108,14 @@ I am using this project for my personal use in developing themes. Please feel fr
 
 ![](/examples/example_dbz2.png)
 
+#### Economist Theme (`ggthemes::theme_economist()`)
+
+You can also apply this workflow to themes in existing packages. Here is the Economist theme from {ggthemes}
+
+![](/examples/example_economist.png)
+
+![](/examples/example_economist2.png)
+
 ---
 
 <sup>1</sup>. For more information on the installation process, please see this Stack Overflow thread: https://stackoverflow.com/questions/34522732/changing-fonts-in-ggplot2

@@ -2,7 +2,7 @@
 
 ## About
 
-The aim of this project is to **create a workflow for designing and testing custom ggplot themes in R.** 
+The aim of this project is to **optimise a workflow for designing and testing custom ggplot themes in R.** 
 
 This project is for you if you are developing ggplot2 themes, or trying to figure out how a theme looks on a variety of plots (or a variety of themes on a plot). This project is built on the `purrr` workflow from this [blog post](https://martinctc.github.io/blog/vignette-generate-your-own-ggplot-theme-gallery/).
 

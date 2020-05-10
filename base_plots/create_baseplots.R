@@ -1,4 +1,4 @@
-source("palettes/brands_pal.R")
+source("palettes/brands_pal2.R")
 
 #### Create base plots ####
 

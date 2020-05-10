@@ -1,3 +1,4 @@
+## This script is a scalable version of brands_pal.R
 ## Credits to:
 ## https://drsimonj.svbtle.com/creating-corporate-colour-palettes-for-ggplot2
 
@@ -8,26 +9,6 @@ palette_data <- readr::read_csv("palettes/palette-data.csv")
 brands_colours <-
   create_named_chr(palette_data$colour,
                    palette_data$hex)
-  
-  # c(`google-blue` = "#4285F4",
-  #   `google-red` = "#DB4437",
-  #   `google-yellow` = "#F4B400",
-  #   `google-green` = "#F4B400",
-  #   `msft-orange` = "#F25022",
-  #   `msft-green` = "#7FBA00",
-  #   `msft-blue` = "#00A4EF",
-  #   `msft-yellow` = "#FFB900",
-  #   `msft-grey` = "#737373",
-  #   `ig-blue` = "#405DE6",
-  #   `ig-purpleblue` = "#5851DB",
-  #   `ig-purple` = "#833AB4",
-  #   `ig-purplered` = "#C13584",
-  #   `ig-rose` = "#E1306C",
-  #   `ig-red` = "#FD1D1D",
-  #   `ig-redorange` = "#F56040",
-  #   `ig-orange` = "#F77737",
-  #   `ig-orangeyellow` = "#FCAF45",
-  #   `ig-yellow` = "#FFDC80")
 
 #' Function to extract Google colours as hex codes
 #'
@@ -43,35 +24,29 @@ brands_cols <- function(...) {
   brands_colours[cols]
 }
 
+u_palette <-
+  palette_data %>%
+  pull(palette) %>%
+  unique() 
 
-## Combine colourss into palettes
+## Combine colours into palettes
 brands_palettes <-
-  list(`google` = brands_cols("google-blue",
-                              "google-red",
-                              "google-green",
-                              "google-yellow"),
-       `msft` = brands_cols("msft-orange",
-                            "msft-green",
-                            "msft-blue",
-                            "msft-yellow",
-                            "msft-grey"),
-       `ig` = brands_cols("ig-blue",
-                          "ig-purpleblue",
-                          "ig-purple",
-                          "ig-purplered",
-                          "ig-rose",
-                          "ig-red",
-                          "ig-redorange",
-                          "ig-orange",
-                          "ig-orangeyellow",
-                          "ig-yellow"))
+  u_palette %>%
+  map(function(x){
+         chr_vect <-
+           palette_data %>%
+           filter(palette == x) %>%
+           pull(colour)
+         
+         return(brands_cols(chr_vect))
+       }) %>%
+  set_names(u_palette)
 
 #' Return function to interpolate a Google colour palette
 #'
 #' @param palette Character name of palette in brands_palettes
 #' @param reverse Boolean indicating whether the palette should be reversed
 #' @param ... Additional arguments to pass to coloursRampPalette()
-
 
 brands_pal <- function(palette = "msft", reverse = FALSE, ...) {
   pal <- brands_palettes[[palette]]

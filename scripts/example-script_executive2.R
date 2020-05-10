@@ -38,3 +38,12 @@ run_themes_withpal(palette = "ig",
 run_themes_withpal(palette = "google",
                    themes = theme_executive(),
                    theme_labels = "theme: theme_executive\npalette: google")
+
+
+run_themes_withpal(palette = "mck",
+                   themes = theme_executive(),
+                   theme_labels = "theme: theme_executive\npalette: mck")
+
+run_themes_withpal(palette = "bain",
+                   themes = theme_executive(),
+                   theme_labels = "theme: theme_executive\npalette: bain")

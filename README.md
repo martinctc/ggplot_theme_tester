@@ -26,7 +26,7 @@ You don't need much to get started:
 install.packages("extrafont")
 
 extrafont::font_import()
-loadfonts(device = "win")
+extrafont::loadfonts(device = "win")
 ```
 This process of loading the fonts can take around 5 minutes, but I assure you it is well worth it.<sup>1</sup> After the process is completed, you will just need to load the {extrafont} library with `library(extrafont)` to use the desired fonts in ggplot.
 

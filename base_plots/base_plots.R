@@ -37,7 +37,7 @@ box_plot <- ggplot(iris,
 density_plot <-
   iris %>%
   ggplot(aes(x = Sepal.Length, fill = Species)) +
-  geom_density(size = 0.1, alpha = 0.8) +
+  geom_density(linewidth = 0.1, alpha = 0.8) +
   facet_wrap(.~Species) +
   labs(x="Sepal Length (cm)",
        y="Density",

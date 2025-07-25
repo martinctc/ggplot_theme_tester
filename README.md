@@ -133,6 +133,23 @@ You can also apply this workflow to themes in existing packages. Here is the Eco
 
 ---
 
+### New Themes Collection
+
+This repository now includes **8 additional custom themes** with diverse styles:
+
+- **Minimal Dark** - Clean, modern dark theme
+- **Retro** - 80s/90s cyberpunk inspired
+- **Academic** - Professional publication style
+- **Neon** - Cyberpunk with bright accents
+- **Nature** - Earth tones and organic feeling
+- **Corporate** - Modern business presentation style
+- **Vintage** - Classic newspaper/magazine design
+- **Tech** - Modern technology company design
+
+📖 **Full documentation with examples**: [`docs/NEW_THEMES_DOCUMENTATION.md`](docs/NEW_THEMES_DOCUMENTATION.md)
+
+---
+
 <sup>1</sup>. For more information on the installation process, please see this Stack Overflow thread: https://stackoverflow.com/questions/34522732/changing-fonts-in-ggplot2
 
 <sup>2</sup> See https://martinctc.github.io/blog/rstudio-projects-and-working-directories-a-beginner's-guide/.
